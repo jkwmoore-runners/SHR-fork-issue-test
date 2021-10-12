@@ -1,3 +1,4 @@
 #!/bin/bash
-hostname
+VAR=`hostname`
+echo "$VAR? $VAR!? You gotta' be kidding me!!!"
 exit
