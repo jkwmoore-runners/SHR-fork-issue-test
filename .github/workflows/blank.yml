@@ -1,0 +1,19 @@
+name: Test GHA fork PR issues
+
+# This shouldn't run the Github action on pull request for external contributors.
+# But I be it will.
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run test script
+        run: bash /test.sh
